@@ -1,0 +1,39 @@
+<?php
+  // Récupère le nom du fichier actuel
+  $current_page = basename($_SERVER['PHP_SELF']);
+?>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dashboard.php">
+      <div class="library-logo-container d-flex align-items-center">
+        <img src="logo.jpg" alt="">
+        <h1 class="library-name ms-2">Success Library</h1>
+      </div>
+    </a>
+    
+    <!-- Bouton Hamburger -->
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($current_page == 'dashboard.php' ? 'active' : ''); ?>" href="dashboard.php">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($current_page == 'manage_books.php' ? 'active' : ''); ?>" href="manage_books.php">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($current_page == 'manage_members.php' ? 'active' : ''); ?>" href="manage_members.php">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($current_page == 'manage_loan.php' ? 'active' : ''); ?>" href="manage_loan.php">Borrow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger <?php echo ($current_page == 'logout.php' ? 'active' : ''); ?>" href="logout.php">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
